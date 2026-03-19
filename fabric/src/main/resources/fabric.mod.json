@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "ddjade",
+  "version": "${version}",
+  "name": "Dungeon Difficulty x Jade",
+  "description": "Addon for Jade that shows information about Dungeon Difficulty's Power Level",
+  "authors": [
+    "KevzCz"
+  ],
+  "contact": {
+    "homepage": "https://github.com/KevzCz/DDJade",
+    "sources": "https://github.com/KevzCz/DDJade/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/ddjade/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.pixeldreamstudios.ddjade.fabric.DDJadeFabric"
+    ],
+    "client": [
+      "net.pixeldreamstudios.ddjade.fabric.client.DDJadeFabricClient"
+    ],
+    "jade": [
+      "net.pixeldreamstudios.ddjade.DDJadePlugin"
+    ]
+  },
+  "mixins": [
+    "ddjade.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*",
+    "jade": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
