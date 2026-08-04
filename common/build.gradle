@@ -7,8 +7,13 @@ dependencies {
     // which get remapped to the correct annotations on each platform.
     // Do NOT use other classes from Fabric Loader.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
-    modImplementation "curse.maven:dungeon-difficulty-645559:7310940"
-    modImplementation "curse.maven:jade-324717:7545228"
+    modImplementation "curse.maven:dungeon-difficulty-645559:$rootProject.dungeon_difficulty_fabric"
+    modImplementation "curse.maven:jade-324717:$rootProject.jade_fabric"
+
+    // Difficulty+ is optional: the provider degrades to Dungeon Difficulty only when absent,
+    // so this is compile-only and every use is guarded by a mod-loaded check.
+    modCompileOnly ":difficultyplus-fabric:$rootProject.difficultyplus_version"
+
     // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 }

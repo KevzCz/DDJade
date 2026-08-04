@@ -1,5 +1,16 @@
 {
   "ddjade.power_level": "Power Level: %s",
   "config.jade.plugin_ddjade.show_attribute_details": "Show Attribute Details",
-  "config.jade.plugin_ddjade.power_level": "Power Level"
+  "config.jade.plugin_ddjade.show_zone": "Show Difficulty+ Zone",
+  "config.jade.plugin_ddjade.show_resistances": "Show Difficulty+ Resistances",
+  "config.jade.plugin_ddjade.power_level": "Power Level",
+  "config.jade.plugin_ddjade.threat_category": "Level Gap Threat",
+  "config.jade.plugin_ddjade.colour_level_by_threat": "Colour Level By Threat",
+  "config.jade.plugin_ddjade.deadly_gap": "Deadly Gap",
+  "config.jade.plugin_ddjade.deadly_colour": "Deadly Colour",
+  "config.jade.plugin_ddjade.hard_gap": "Hard Gap",
+  "config.jade.plugin_ddjade.hard_colour": "Hard Colour",
+  "config.jade.plugin_ddjade.even_colour": "Even Colour",
+  "config.jade.plugin_ddjade.easy_gap": "Easy Gap",
+  "config.jade.plugin_ddjade.easy_colour": "Easy Colour"
 }

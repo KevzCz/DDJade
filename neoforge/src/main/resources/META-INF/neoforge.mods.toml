@@ -11,7 +11,7 @@ authors = "KevzCz"
 description = '''
 Addon for Jade that shows information about Dungeon Difficulty's Power Level
 '''
-#logoFile = ""
+logoFile = "assets/ddjade/icon.png"
 
 [[dependencies.ddjade]]
 modId = "neoforge"
@@ -31,6 +31,15 @@ side = "BOTH"
 modId = "architectury"
 type = "required"
 versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+# Optional: the Difficulty+ zone line is skipped when it is absent.
+# AFTER so its API is initialized before our provider queries it.
+[[dependencies.ddjade]]
+modId = "difficultyplus"
+type = "optional"
+versionRange = "[1.0,)"
 ordering = "AFTER"
 side = "BOTH"
 
