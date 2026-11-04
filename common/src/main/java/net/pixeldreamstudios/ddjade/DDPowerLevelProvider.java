@@ -23,6 +23,8 @@ import snownee.jade.api.config.IPluginConfig;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.LinkedHashMap;
 
 public enum DDPowerLevelProvider implements IEntityComponentProvider, IServerDataProvider<EntityAccessor> {
     INSTANCE;
@@ -264,17 +266,25 @@ public enum DDPowerLevelProvider implements IEntityComponentProvider, IServerDat
             Holder<Attribute> attributeHolder = instance.getAttribute();
             Attribute attribute = attributeHolder.value();
             double baseValue = instance.getBaseValue();
+            Map<MergeKey, Double> merged = new LinkedHashMap<>();
 
             for (AttributeModifier modifier : instance.getModifiers()) {
                 String source = sourceOf(modifier);
                 if (source != null) {
-                    attributes.add(new AttributeInfo(attribute, modifier, baseValue, source));
+                    merged.merge(new MergeKey(modifier.operation(), source), modifier.amount(), Double::sum);
                 }
             }
+            merged.forEach((key, amount) -> attributes.add(new AttributeInfo(attribute,
+                    new AttributeModifier(ResourceLocation.fromNamespaceAndPath(DDJade.MOD_ID, MERGED_ID), amount, key.operation()), baseValue, key.source())));
         }
 
         return attributes;
     }
+
+    private record MergeKey(AttributeModifier.Operation operation, String source) {
+    }
+
+    private static final String MERGED_ID = "merged";
 
     private static String sourceOf(AttributeModifier modifier) {
         String id = modifier.id().toString();
