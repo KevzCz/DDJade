@@ -39,7 +39,7 @@ side = "BOTH"
 [[dependencies.ddjade]]
 modId = "difficultyplus"
 type = "optional"
-versionRange = "[1.0,)"
+versionRange = "[1.0.1,)"
 ordering = "AFTER"
 side = "BOTH"
 

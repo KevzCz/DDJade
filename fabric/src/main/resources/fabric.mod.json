@@ -37,6 +37,6 @@
     "jade": "*"
   },
   "suggests": {
-    "difficultyplus": "*"
+    "difficultyplus": ">=1.0.1"
   }
 }

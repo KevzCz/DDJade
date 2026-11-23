@@ -29,6 +29,11 @@ public final class DifficultyPlusCompat {
             return Optional.empty();
         }
         try {
+            Optional<DifficultyPlusAPI.ScaledZone> scaled = DifficultyPlusAPI.scaledZoneOf(entity);
+            if (scaled.isPresent()) {
+                DifficultyPlusAPI.ScaledZone zone = scaled.get();
+                return Optional.of(new ZoneInfo(zone.difficulty(), zone.level(), zone.matchId()));
+            }
             BlockPos pos = scaledAt(entity).orElseGet(entity::blockPosition);
             Optional<ZoneContext> zone = DifficultyPlusAPI.zoneAt(level, pos);
             if (zone.isEmpty()) {

@@ -1,1 +1,1 @@
-- Stat changes of the same kind from the same source are now added up into one line, instead of one line per modifier.
+- Improve the Zone line
